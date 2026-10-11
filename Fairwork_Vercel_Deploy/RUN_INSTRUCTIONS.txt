@@ -1,0 +1,43 @@
+========================================================================
+   FAIRWORK: BLOCKCHAIN MILESTONE AGREEMENT & TRACKING PLATFORM
+   LOCAL RUN & VERCEL DEPLOYMENT GUIDE
+========================================================================
+
+FOLDER LOCATION:
+D:\Rylan\code\bnB\BitBuilders_college_round-main\Fairwork_Vercel_Deploy
+
+------------------------------------------------------------------------
+1. HOW TO RUN LOCALLY
+------------------------------------------------------------------------
+Open PowerShell or Command Prompt inside this folder:
+
+   cd "D:\Rylan\code\bnB\BitBuilders_college_round-main\Fairwork_Vercel_Deploy"
+   pip install -r requirements.txt
+   python run_app.py
+
+Then open:
+   http://127.0.0.1:5000
+
+------------------------------------------------------------------------
+2. HOW TO DEPLOY TO VERCEL
+------------------------------------------------------------------------
+This folder is pre-configured with:
+ - vercel.json       (Routes all requests to /api/index.py)
+ - api/index.py      (Vercel serverless Python WSGI entry point)
+ - requirements.txt  (Lightweight dependencies for fast Vercel builds)
+ - Serverless-safe storage (/tmp/ fallback when running on Vercel)
+
+Option A — Deploy via Vercel CLI (Fastest):
+1. Open terminal in this folder:
+   cd "D:\Rylan\code\bnB\BitBuilders_college_round-main\Fairwork_Vercel_Deploy"
+2. Run:
+   npx vercel
+3. Follow the prompts (press Enter to accept defaults).
+4. For production deployment, run:
+   npx vercel --prod
+
+Option B — Deploy via GitHub + Vercel Dashboard:
+1. Push the contents of `Fairwork_Vercel_Deploy` to a new GitHub repository.
+2. Go to https://vercel.com/new and import that GitHub repository.
+3. Leave the Root Directory as `./` and click "Deploy".
+========================================================================
